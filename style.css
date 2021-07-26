@@ -1,10 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
+
+
 :root{
-	--main-background: #00a9e277;
+    --main-header-background:;
+	--main-background: #B6A799;
 	--main-fonts-color: #fff;
-	--main-decor-color:#00a9e2;
-    --main-header-background:#21252e;
+  --main-border-color: #B6A799;
+	--main-decor-color: #B6A799;
 	--main-font-family: 'Poppins', sans-serif;
 }
 
@@ -18,7 +21,7 @@ main{
 	padding: 0;
 	width: 100%;
 	height: 100%;
-	background: var(--main-background);
+	background: rgba(168, 143, 120, 0.74);
 }
 
 /*────────────────── 
@@ -74,19 +77,10 @@ a.nav-link{
 }
 
 .nav-link:hover {
-	color: #000000;
+	color: #5E5E5D;
     background: var(--main-decor-color);
 }
 
-.contact-form {
- font: 'Poppins', sans-serif;
- 	margin: auto;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	color: var(--main-fonts-color);
-}
 
 /*──────────────────
        home
@@ -95,7 +89,7 @@ a.nav-link{
 .intro-pic {
   width: 250px;
   height: 250px;
-  
+  object-fit: contain;
 }
 
 #home{ 	
@@ -109,7 +103,7 @@ a.nav-link{
 }
 
 #home .filter{
-	background: url('https://images.unsplash.com/photo-1544099858-75feeb57f01b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80') no-repeat;
+	background: url('Images/dadpic2.PNG') no-repeat;
 	background-size: cover;
 	background-position:center;
     position: absolute;
@@ -178,26 +172,6 @@ a.nav-link{
 
 
 
-.formbox {
-  
-    width: 100px;
-    height: 100px;
-    margin: 0 auto;
-    font: 'Poppins', sans-serif;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	color: var(--main-fonts-color);
-  
-
-}
-
-.square-button:hover {
-	color: #000000;
-    background: var(--main-decor-color);
-    font: 'Poppins', sans-serif;
-}
 
 /*──────────────────
       projects
@@ -242,6 +216,7 @@ a.nav-link{
 }
 
 .card img{
+   object-fit: contain;
 	width: 100%;
 	height:70%;
 	border-radius:10px 10px 0px 0px;
@@ -264,33 +239,60 @@ a.nav-link{
     color:#202020;
 }
 
+
 .card:hover{
 	box-shadow: 0 0 1.5rem gray;
 }
 
-/*──────────────────
-      Contact
-──────────────────*/
 
-#contact{
-	margin: auto;
-	padding-bottom: 20px;
-	height: 600px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	color: var(--main-fonts-color);
-}
-	
-#contact p{
-	padding:10px;
-	text-align: center;
-	font-size:1.2rem;
+/*contact*/
+
+
+
+
+/* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+  width: 100%; /* Full width */
+  color: var(--main-fonts-color);
 	font-family: var(--main-font-family);
+  padding: 12px; /* Some padding */ 
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+  background-color: #B6A799;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+  background-color: rgba(182, 167, 153, 0.527);
+}
+
+/* Add a background color and some padding around the form */
+.container {
+  border-radius: 5px;
+  background-color: #C3BAAC;
+  color: var(--main-fonts-color);
+	font-family: var(--main-font-family);
+  padding: 20px;
 }
 
 
+.contacttitle {
+  float: center;
+  text-align: center;
+}
 /*────────────────── 
        footer
 ──────────────────*/
@@ -337,7 +339,7 @@ hr {
 ──────────────────*/
 ::-webkit-Scrollbar{
     width: 5px; 
-	background: rgba(5,5,5,1);
+	background: #D7C8B7;
 }
 ::-webkit-Scrollbar-thumb{
 	border-radius: 10px;
@@ -451,110 +453,25 @@ hr {
 	transform:translatex(0%);
 }
 
-/*contact form*/
-//import font from google
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900);
-
-//import compass
-@import "compass";
-
-//colors
-$primary-color   : #FF512F;
-$secondary-color : #333;
-$form-bg         : #fff;
-
-
-//contact form
-.contact-form{
-    margin-top: 30px;
-    .input-block{
-        background-color: rgba(white, .8);
-        border: solid 1px $primary-color;
-        width: 100%;
-        height: 60px;
-        padding: 25px;
-        position: relative;
-        margin-bottom: 20px;
-        @include transition(all 0.3s ease-out);
-        &.focus{
-            background-color: $form-bg;
-            border: solid 1px darken($primary-color, 10%);
-        }
-        &.textarea{
-            height: auto;
-            .form-control{
-                height: auto;
-                resize: none;
-            }
-        }
-        label{
-            position: absolute;
-            left: 25px;
-            top: 25px;
-            display: block;
-            margin: 0;
-            font-weight: 300;
-            z-index: 1;
-            color: $secondary-color;
-            font-size: 18px;
-            line-height: 10px;
-        }
-        .form-control{
-            background-color: transparent;
-            padding: 0;
-            border: none;
-            @include border-radius(0);
-            @include box-shadow(none);
-            height: auto;
-            position: relative;
-            z-index: 2;
-            font-size: 18px;
-            color: $secondary-color;
-        }
-        .form-control:focus{
-            label{
-                top: 0;
-            }
-        }
-    }
-    .square-button{
-        background-color: rgba(white, .8);
-        color: darken($primary-color, 10%);
-        font-size: 26px;
-        text-transform: uppercase;
-        font-weight: 700;
-        text-align: center;
-        @include border-radius(2px);
-        @include transition(all 0.3s ease);
-        padding: 0 60px;
-        height: 60px;
-        border: none;
-        width: 100%;
-        &:hover,
-        &:focus{
-            background-color: white;
-        }
-    }
-}
 
 //tablet and above devices
 @media (min-width: 768px) { 
+
   .contact-wrap{
     width: 60%;
     margin: auto;
   }
 }
 
-
-
-
 //////////////////////////
   /*----page styles---*/
 //////////////////////////
-body{
-  @include background-image(linear-gradient(to right, $primary-color, #DD2476));
-  font-family: 'Roboto', sans-serif;
+
+body {
+   @include background-image(linear-gradient(to right, $primary-color, #C3BAAC);
+
 }
+
 .contact-wrap{
   padding: 15px;
 }
@@ -578,29 +495,48 @@ h1{
   }
 }
 
-
-
-//follow me template
-.made-with-love{
-  margin-top: 40px;
-  padding: 10px;
-  clear: left;
-  text-align: center;
-  font-size: 10px;
-  font-family: 'Poppins', sans-serif;
-  color: #fff;
-  i{
-    font-style: normal;
-    color: #FFF;
-    font-size: 14px;
-    position: relative;
-    top: 2px;
-  }
-  a{
-    color: #fff;
-    text-decoration: none;
-    &:hover{
-      text-decoration: underline;
-    }
-  }
+body {
+    background-color: #5E5E5D;
+    padding-top: 85px;
 }
+
+h1 {
+    font-family: 'Poppins', sans-serif, 'arial';
+    font-weight: 600;
+    font-size: 72px;
+    color: white;
+    text-align: center;
+}
+
+h4 {
+    font-family: 'Roboto', sans-serif, 'arial';
+    font-weight: 400;
+    font-size: 20px;
+    color: #9b9b9b;
+    line-height: 1.5;
+}
+
+/* ///// inputs /////*/
+
+input:focus ~ label, textarea:focus ~ label, input:valid ~ label, textarea:valid ~ label {
+    font-size: 0.75em;
+    color: #999;
+    top: -5px;
+    -webkit-transition: all 0.225s ease;
+    transition: all 0.225s ease;
+}
+
+.styled-input {
+    float: left;
+    width: 293px;
+    margin: 1rem 0;
+    position: relative;
+    border-radius: 4px;
+}
+
+@media only screen and (max-width: 768px){
+    .styled-input {
+        width:100%;
+    }
+}
+
